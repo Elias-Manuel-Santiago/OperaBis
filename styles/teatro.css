@@ -32,6 +32,13 @@ section {
     border-top: 1px solid gold;
 }
 
+#left{
+    animation: entrada_left 1s ease-out forwards;
+}
+#right{
+    animation: entrada_right 1s ease-out forwards;
+}
+
 .img_y_texto_container {
     display: flex;
     width: fit-content;
@@ -108,4 +115,28 @@ section {
 .compra_button:active {
     border-bottom-width: 0px;
     transform: translateY(3px);
+}
+
+@keyframes entrada_right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrada_left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

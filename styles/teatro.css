@@ -1,0 +1,111 @@
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    content: "";
+}
+
+p {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+
+    gap: 1rem;
+
+    padding: 1em 0 1em 0;
+
+    border-bottom: 1px solid gold;
+    border-top: 1px solid gold;
+}
+
+.img_y_texto_container {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 3rem;
+}
+
+.info_fecha {}
+
+.img_fecha_container {
+    width: 20%;
+}
+
+.img_fecha {
+    width: 100%;
+}
+
+.fecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gold;
+    padding: 0.5em;
+    width: 10%;
+    margin: 0 2rem;
+}
+
+.titulo_fecha {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+}
+
+.ubicacion_fecha {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.3rem;
+}
+
+.dia {
+    color: gold;
+    font-size: 3.5rem;
+}
+
+.mes {
+    text-transform: uppercase;
+}
+
+
+.fecha_buttons {
+    margin: 0 2rem;
+}
+
+.compra_button {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(73, 73, 255);
+    border: solid rgb(100, 100, 249);
+    border-width: 0 0 3px 0;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+    padding: 0.5em;
+    text-transform: uppercase;
+
+    transition: border-bottom-width 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.compra_button:hover {
+    border-bottom-width: 6px;
+    transform: translateY(-3px);
+}
+
+.compra_button:active {
+    border-bottom-width: 0px;
+    transform: translateY(3px);
+}

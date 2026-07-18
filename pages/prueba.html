@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Opera Bis — Logo animado</title>
+    <style>
+        :root {
+            --bg: #241016;
+            --ink: #ffffff;
+            --stroke-width: 16;
+            --draw-duration: 2.6s;
+            --fill-duration: 0.9s;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui, sans-serif;
+        }
+
+        .stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        #logo {
+            width: min(70vw, 520px);
+            height: auto;
+            overflow: visible;
+        }
+
+        #logo path {
+            stroke-dasharray: 93241.2421875;
+            stroke-dashoffset: 200;
+
+            fill: var(--ink);
+            fill-opacity: 1;
+            stroke: var(--ink);
+
+
+            /* Definimos ambas transiciones juntas para evitar conflictos */
+
+            animation: dibujar 3s ease forwards infinite;
+        }
+
+        #logo path.filled {
+            fill-opacity: 1;
+        }
+
+        button {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid rgba(255, 255, 255, .4);
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 13px;
+            letter-spacing: .05em;
+            cursor: pointer;
+            opacity: .7;
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+        <svg id="logo" viewBox="0 0 962.544059 993.859861" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(-179.873499,993.859861) scale(0.100000,-0.100000)">
+                <path d="M8701 9924 c-699 -69 -1485 -304 -2471 -739 -737 -325 -1412 -759
+-2068 -1331 -185 -161 -579 -554 -747 -744 -936 -1060 -1487 -2209 -1600
+-3337 -19 -187 -22 -554 -5 -733 60 -665 282 -1290 616 -1734 210 -278 411
+-473 682 -660 248 -170 391 -241 682 -334 272 -88 491 -121 845 -129 627 -14
+1179 88 1900 354 201 75 1044 507 1445 741 1055 616 1897 1388 2497 2287 523
+783 836 1574 929 2345 24 197 24 593 0 775 -23 179 -61 358 -104 495 -36 111
+-37 120 -36 255 1 100 11 207 35 375 84 593 20 957 -229 1315 -94 135 -187
+241 -280 321 -327 280 -775 440 -1351 484 -182 14 -576 11 -740 -6z m924 -199
+c514 -57 899 -218 1170 -490 238 -237 372 -546 406 -931 l11 -130 -36 -178
+c-41 -199 -55 -236 -90 -236 -18 0 -25 8 -35 43 -18 58 -69 160 -116 231 -50
+75 -188 221 -283 299 -348 284 -919 527 -1382 589 -144 19 -571 16 -755 -6
+-541 -63 -1024 -210 -1510 -460 -767 -394 -1569 -1037 -2191 -1756 -518 -600
+-820 -1081 -1036 -1650 -236 -623 -314 -1227 -218 -1701 32 -158 107 -386 170
+-514 269 -555 864 -898 1406 -810 164 26 299 81 454 183 213 141 353 328 427
+568 23 78 27 106 27 224 0 117 -3 143 -23 192 -50 128 -135 212 -247 247 -251
+79 -522 -19 -672 -243 -144 -215 -149 -441 -12 -578 48 -48 68 -60 130 -79 63
+-19 87 -21 194 -16 73 3 150 14 196 26 41 11 76 18 78 16 2 -2 -6 -21 -19 -42
+-89 -148 -255 -262 -466 -319 -102 -28 -348 -26 -458 4 -102 28 -261 106 -345
+170 -141 107 -285 283 -369 450 -118 234 -172 573 -151 933 19 316 80 700 142
+889 183 563 502 1153 882 1629 524 656 1069 1188 1654 1613 422 307 707 473
+1066 622 562 235 1119 328 1608 271 472 -55 869 -246 1143 -548 211 -233 379
+-572 429 -867 24 -137 31 -334 17 -486 l-11 -131 -43 -44 c-23 -25 -95 -124
+-158 -220 -246 -372 -510 -642 -944 -964 -167 -124 -265 -186 -387 -244 -99
+-47 -135 -82 -159 -153 -21 -64 -13 -74 59 -63 147 20 300 105 532 293 145
+118 580 556 851 856 l224 249 3 -83 c8 -231 -181 -944 -373 -1405 -304 -733
+-758 -1437 -1383 -2145 -254 -288 -732 -760 -1057 -1045 -444 -389 -1164 -852
+-1646 -1058 -627 -268 -1304 -404 -1831 -367 -421 28 -749 134 -1060 340 -526
+348 -836 873 -950 1605 -26 169 -36 583 -19 787 85 1010 447 2001 1088 2982
+356 543 778 1071 1183 1477 356 357 666 620 1077 914 998 713 2090 1153 3123
+1259 184 19 524 19 685 1z" />
+            </g>
+        </svg>
+
+        <button id="replay">Volver a dibujar</button>
+    </div>
+
+    <script>
+        /*
+      const svg = document.getElementById('logo');
+      const paths = Array.from(svg.querySelectorAll('path'));
+    
+      function playDraw(){
+        // 1. Resetear el estado inicial (oculto y sin clases)
+        paths.forEach(p => {
+          p.classList.remove('filled');
+          const length = p.getTotalLength();
+          p.style.strokeDasharray = length;
+          p.style.strokeDashoffset = length; // Aquí se inicia "oculto"
+          p.style.transitionDelay = '0s'; // Reset de delay
+        });
+    
+        // Forzamos el reflujo (reflow) del navegador para aplicar los estilos de reset
+        void svg.getBoundingClientRect();
+    
+        // 2. Ejecutar la animación de dibujo
+        requestAnimationFrame(() => {
+          paths.forEach((p, i) => {
+            p.style.transitionDelay = (i * 0.12) + 's';
+            p.style.strokeDashoffset = '0'; // <- MODIFICACIÓN: Actualizamos el inline style a 0
+          });
+        });
+    
+        // 3. Al terminar la animación de trazo, rellenamos el color de fondo (fill-opacity)
+        const totalDraw = parseFloat(getComputedStyle(document.documentElement)
+          .getPropertyValue('--draw-duration')) * 1000;
+    
+        setTimeout(() => {
+          paths.forEach(p => p.classList.add('filled'));
+        }, totalDraw + 150);
+      }
+    
+      playDraw();
+      document.getElementById('replay').addEventListener('click', playDraw);
+      */
+    </script>
+
+</body>
+
+</html>

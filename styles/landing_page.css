@@ -1,0 +1,165 @@
+body {
+    background-image: url('../assets/background_landingpage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #333333;
+    backdrop-filter: blur(10px) brightness(0.5);
+}
+
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+
+#landing_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#landing_logo_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    animation: entrada_logo 0.8s ease-out forwards;
+}
+
+#landing_logo {
+    width: 80%;
+}
+
+#landing_buttons {
+    display: flex;
+    width: 50%;
+    padding: 0 10% 0 10%;
+    gap: 20px;
+    flex-direction: column;
+    animation: entrada_botones 0.7s ease-out forwards;
+
+}
+
+.landing_button {
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: none;
+    padding: 1em;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    /* 1. Use a transparent border to keep the exact button sizing intact */
+    border: 1px solid transparent;
+
+    /* 2. Draw the borders using multiple background layers */
+    background-image:
+        linear-gradient(gold, gold),
+        /* Top Left segment */
+        linear-gradient(gold, gold),
+        /* Top Right segment */
+        linear-gradient(gold, gold),
+        /* Bottom Right segment */
+        linear-gradient(gold, gold),
+        /* Bottom Left segment */
+        linear-gradient(gold, gold),
+        /* Right border full */
+        linear-gradient(gold, gold);
+    /* Left border full */
+
+    background-origin: border-box;
+    /* Anchor the lines to the border edge */
+    background-repeat: no-repeat;
+
+    background-position:
+        top left,
+        top right,
+        bottom right,
+        bottom left,
+        right top,
+        left bottom;
+
+    /* 3. Size the backgrounds to leave a 20px gap */
+    background-size:
+        calc(94%) 1px,
+        /* Top left covers all but the last 20px on the right */
+        0px 1px,
+        /* Top right is initially 0 */
+        calc(94%) 1px,
+        /* Bottom right covers all but the first 20px on the left */
+        0px 1px,
+        /* Bottom left is initially 0 */
+        1px 100%,
+        /* Right border full height */
+        1px 100%;
+    /* Left border full height */
+
+    /* Animate background-size to slide the gaps */
+    transition: color 0.3s ease-in-out, padding 0.3s ease-in-out, scale 0.1s ease-in-out, background-size 0.5s ease-out;
+}
+
+.landing_button:hover {
+    color: gold;
+
+    /* Slide the gaps: Top gap moves left, Bottom gap moves right */
+    background-size:
+        0px 1px,
+        /* Top left shrinks to 0 */
+        calc(94%) 1px,
+        /* Top right grows, putting the gap on the left */
+        0px 1px,
+        /* Bottom right shrinks to 0 */
+        calc(94%) 1px,
+        /* Bottom left grows, putting the gap on the right */
+        1px 100%,
+        1px 100%;
+}
+
+.landing_button:active {
+    scale: 0.96;
+
+    /* Close the gaps entirely to make solid borders */
+    background-size:
+        100% 1px,
+        calc(94%) 1px,
+        100% 1px,
+        calc(94%) 1px,
+        1px 100%,
+        1px 100%;
+    transition-duration: 0.1s;
+}
+
+
+@keyframes entrada_logo {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(X);
+    }
+}
+
+@keyframes entrada_botones {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(X);
+    }
+}
+
+
+

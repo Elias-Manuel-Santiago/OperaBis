@@ -9,29 +9,39 @@ body {
 
 
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
+    height: 80%;
     width: 90%;
     transform: translate(-50%, -50%);
 }
 
 #landing_page {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: 100%;
+
     align-items: center;
 }
+
+
 
 #landing_logo_container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
+
     animation: entrada_logo 0.8s ease-out forwards;
 }
 
 #landing_logo {
-    width: 80%;
+    height: 100%;
+    width: 100%;
 }
 
 #landing_buttons {
@@ -161,5 +171,15 @@ main {
     }
 }
 
-
-
+@media(max-width:1050px){
+    #landing_page{
+        flex-direction: column;
+    }
+    #landing_logo_container{
+        width: 65%;
+    }
+    #landing_buttons{
+        width: 70%;
+        padding: 0;
+    }
+}

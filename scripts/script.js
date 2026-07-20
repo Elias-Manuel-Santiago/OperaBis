@@ -1,13 +1,15 @@
 const landing_view = "views/landing.html"
 const teatro_view = "views/teatro.html"
+const shows_view = "views/shows.html"
 
-let actual_view = "landing";
+
+
+let actual_view = localStorage.getItem('actual_view');
 let main = document.getElementById('main');
-let link_style;
 
+async function set_view(view) {
 
-function set_view(view) {
-
+    let link_style, res;
 
     switch (view) {
 
@@ -17,15 +19,14 @@ function set_view(view) {
             link_style.href = 'styles/landing.css';
             link_style.id = 'landing_style';
             document.head.appendChild(link_style);
-            fetch(landing_view)
-                .then(respuesta => respuesta.text()) // Convierte la respuesta a texto plano
-                .then(html => {
-                    main.innerHTML = html; // Inserta el HTML en tu elemento
-                })
-                .catch(error => {
-                    console.error('Error al cargar el archivo HTML:', error);
-                });
+
+            res = await fetch(landing_view);
+            main.innerHTML = await res.text();
+
+            localStorage.setItem('actual_view', 'landing');
+
             document.getElementById('teatro_style')?.remove();
+            document.getElementById('shows_style')?.remove();
             break;
         case "teatro":
             link_style = document.createElement('link');
@@ -34,26 +35,52 @@ function set_view(view) {
             link_style.id = 'teatro_style';
             document.head.appendChild(link_style);
 
-            fetch(teatro_view)
-                .then(respuesta => respuesta.text()) // Convierte la respuesta a texto plano
-                .then(html => {
-                    main.innerHTML = html; // Inserta el HTML en tu elemento
-                })
-                .catch(error => {
-                    console.error('Error al cargar el archivo HTML:', error);
-                });
+            res = await fetch(teatro_view);
+            main.innerHTML = await res.text();
+
+            localStorage.setItem('actual_view', 'teatro');
+
             document.getElementById('landing_style')?.remove();
+            document.getElementById('shows_style')?.remove();
+            break;
+        case "shows":
+            link_style = document.createElement('link');
+            link_style.rel = 'stylesheet';
+            link_style.href = 'styles/shows.css';
+            link_style.id = 'shows_style';
+            document.head.appendChild(link_style);
+
+            res = await fetch(shows_view);
+            main.innerHTML = await res.text();
+
+            localStorage.setItem('actual_view', 'shows');
+
+            document.getElementById('landing_style')?.remove();
+            document.getElementById('teatro_style')?.remove();
             break;
     }
 
 }
 
-set_view(actual_view);
-
-main.addEventListener('click', function (event) {
-    // Check if the clicked element (or its ID) is the 'teatro' button
-    if (event.target && event.target.id === 'teatro') {
-        set_view('teatro');
+if (actual_view == null) {
+    set_view('landing');
+} else {
+    set_view(actual_view);
+}
+document.body.addEventListener('click', function (event) {
+    if(event.target){
+        switch(event.target.id){
+            case 'nav0':
+                set_view('landing');
+                break;
+            case 'teatro':
+                set_view('teatro');
+                break;
+            case 'nav1':
+            case 'shows':
+                set_view('shows');
+                break;
+        }
     }
 });
 

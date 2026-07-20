@@ -14,7 +14,7 @@ body {
     background: linear-gradient(90deg, rgb(11, 0, 0) 0%, rgb(11, 0, 0) 70%);
     animation: entrada_fondo 1.4s ease-out forwards;
     overflow-x: hidden;
-
+    
 }
 
 @keyframes entrada_fondo {
